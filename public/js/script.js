@@ -14,3 +14,7 @@ const swiper = new Swiper('.swiper', {
       },
   
   });
+
+  function click(){
+    alert("Hey");
+}

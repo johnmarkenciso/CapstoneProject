@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MarketController::class, 'index']);
 Route::get('/farmers', [MarketController::class, 'farmers']);
 Route::get('/aboutus', [MarketController::class, 'about']);
+Route::get('/login', [MarketController::class, 'login']);

@@ -1,6 +1,6 @@
 <x-layout>
     <x-nav>
-        <nav-menu class="mt-10">
+        <x-nav-menu class="mt-10">
             <li id="selected">
                 <a href="/">
                     <i class='bx bx-store-alt icon'></i>
@@ -19,24 +19,35 @@
                     <span class="text nav-text">About Us</span>
                 </a>
             </li>
+        </x-nav-menu>
+        <div class="bottom-content">
+            <li>
+                <a href="/cart">
+                    <i class='bx bx-basket icon' ></i>
+                    <span class="text nav-text">Cart</span>
+                    <span class="nav-text absolute right-10 rounded-full bg-slate-300 p-1">{{count($fruits)+count($vegetables)}}</span>
+                </a>
 
-        
-
-        <li class="search-box">
-            <i class='bx bx-search icon'></i>
-            <input type="text" placeholder="Search...">
-        </li>
-        </nav-menu>
+            </li>         
+            <li>
+                <a href="/login">
+                    <i class='bx bx-user icon' ></i>
+                    <span class="text nav-text">Sign Up</span>
+                </a>
+            </li>         
+        </div>
     </x-nav>
 
     <x-main class="p-10">
         @include('partials._search')
+        @include('partials._filter')
+        
         <div>
-            <div class="sticky top-2">
-                <h1>Fruits Section</h1>
+            <div class="sticky top-2 z-10 w-full rounded-full p-2 bg-slate-300">
+                <p class="text-2xl">Fruits Section</p>
             </div>
 
-            <div class="mt-3 flex flex-wrap justify-center gap-3">
+            <div class="mt-3 flex flex-wrap text-center justify-center gap-3">
                 @unless (count($fruits) == 0)
 
                 @foreach($fruits as $fruit)
@@ -49,12 +60,12 @@
                 
             </div>
         </div>
-        <div>
-            <div class="sticky top-2">
-                <h1>Vegetables Section</h1>
+        <div class="mt-5">
+            <div class="sticky top-2 z-10 w-full rounded-full p-2 bg-slate-300">
+                <p class="text-2xl">Vegtables Section</p>
             </div>
 
-            <div class="mt-3 flex flex-wrap justify-center gap-3">
+            <div class="mt-3 flex flex-wrap text-center justify-center gap-3">
                 @unless (count($vegetables) == 0)
 
                 @foreach($vegetables as $vegetable)

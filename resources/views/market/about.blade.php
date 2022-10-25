@@ -1,6 +1,6 @@
 <x-layout>
     <x-nav>
-        <nav-menu class="mt-10">
+        <x-nav-menu class="mt-10">
             <li>
                 <a href="/">
                     <i class='bx bx-store-alt icon'></i>
@@ -19,18 +19,24 @@
                     <span class="text nav-text">About Us</span>
                 </a>
             </li>
+        </x-nav-menu>
+        <div class="bottom-content">
+            <li class="selected">
+                <a href="/login">
+                    <i class='bx bx-user icon' ></i>
+                    <span class="text nav-text">Sign Up</span>
+                </a>
+            </li>
 
-        
-
-        <li class="search-box">
-            <i class='bx bx-search icon'></i>
-            <input type="text" placeholder="Search...">
-        </li>
-        </nav-menu>
+            
+            
+        </div>
     </x-nav>
 
     <x-main class="main-content">
-        
+        <div class="p-10 h-10 w-full bg-zinc-200 hover:bg-slate-900 hover:duration-700">
+            <h1 class="fixed right-0">Mission</h1>
+        </div>
     </x-main>
 
 </x-layout>
